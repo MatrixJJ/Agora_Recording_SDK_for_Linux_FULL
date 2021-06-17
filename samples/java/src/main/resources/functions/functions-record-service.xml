@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE functions PUBLIC "//function_templete/" "http://develop.youchebao.cn/functions_template_v6.dtd">
+
+<functions moduleAuthor="Aaron.Zhang" moduleName="录制面签视频接口" moduleCode="record">
+
+	<function funcMode="METHOD" notCatchMsg="加入频道失败" funcName="加入频道" funcId="5050001">
+		<method methodName="createChannel" beanName="agoraService" />
+		<inParams>
+			<inParam name="app_id" display="应用编号" paramMode="REQUIRED" />
+			<inParam name="uid" display="客户编号" paramMode="REQUIRED" />
+			<inParam name="channel_name" display="频道名称" paramMode="REQUIRED" />
+			<inParam name="channel_key" display="频道密钥" paramMode="OPTIONAL" />
+		</inParams>
+		<outParams>
+			<outParam name="error_no" display="错误代码" />
+			<outParam name="error_info" display="错误信息" />
+		</outParams>
+	</function>
+
+	<function funcMode="METHOD" notCatchMsg="离开频道失败" funcName="离开频道" funcId="5050002">
+		<method methodName="leaveChannel" beanName="agoraService" />
+		<inParams>
+			<inParam name="channel_name" display="频道名称" paramMode="REQUIRED" />
+		</inParams>
+		<outParams>
+			<outParam name="error_no" display="错误代码" />
+			<outParam name="error_info" display="错误信息" />
+		</outParams>
+	</function>
+
+	<function funcMode="METHOD" notCatchMsg="查询是否有用户加入频道失败" funcName="查询是否有用户加入频道" funcId="5050003">
+		<method methodName="hasUserJoined" beanName="agoraService" />
+		<inParams>
+			<inParam name="channel_name" display="频道名称" paramMode="REQUIRED" />
+		</inParams>
+		<outParams>
+			<outParam name="user_joined" display="是否有用户加入频道(0：否；1：是)" />
+			<outParam name="error_no" display="错误代码" />
+			<outParam name="error_info" display="错误信息" />
+		</outParams>
+	</function>
+</functions>

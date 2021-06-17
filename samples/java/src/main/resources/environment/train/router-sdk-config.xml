@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ams-client-config>
+	<!-- 非服务应用，建议不要配置 localServerName 和 localServerAlias -->
+	<performance heartbeatTime="30000" acquireConnWaitTime="1000" registerTime="5000" keepAliveTimeOut="120000" reconnInterval="3000"
+				 localServerName="chebei-record" localServerAlias="chebei-record-service" callBackTime="100000" enmCompress="ZLIB" />
+	<parents>
+		<parent parentName="router">
+			<members>
+				<member no="1" address="172.16.3.252" port="5000" poolSize="3" safeLevel="NONE" />
+			</members>
+		</parent>
+	</parents>
+</ams-client-config>
